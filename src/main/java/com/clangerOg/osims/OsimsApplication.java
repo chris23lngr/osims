@@ -7,6 +7,9 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class OsimsApplication {
 
 	public static void main(String[] args) {
+
+		System.out.println("System has started.");
+
 		SpringApplication.run(OsimsApplication.class, args);
 	}
 

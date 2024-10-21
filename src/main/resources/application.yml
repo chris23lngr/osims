@@ -3,13 +3,29 @@ spring:
     name: osims
   jackson:
     property-naming-strategy: SNAKE_CASE
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
   flyway:
     locations: classpath:/db/migration
-    schemas: members
+    schemas: public
     baselineOnMigrate: true
     enabled: true
   datasource:
     driverClassName: org.postgresql.Driver
-    url: jdbc:postgresql://localhost:5432/employees?currentSchema=employees
+    url: jdbc:postgresql://localhost:5432/osimsdev?currentSchema=public
     username: postgres
-    password: *****
+    password: zC(937<wM9Ce
+server:
+  port: 8080
+jwt:
+  token:
+    validity: 1800 # 30 minutes
+    prefix: Bearer
+  signing:
+    key: 81ad7031b15681d7dbe12b45c2f360e88076d8d04b1991c4fb551ed785d8980ae0fa81445176c9e51899d85584afeb81115e3d7c4d360d521b0f3ada73808794e63c3f0239a3dfe7cc362b76407d16e0eb371dfbf9ecdbcbe05b4b01a2264fdf610f63cb08a0d9ce6025698447e6b5dcd8188c895796942ae6e1d214803de5453efcfd8724946004edb6da6fcb8a9defa56c7e85401b93ce600f3815a8c88bb5c1f43f94a8f0fe65fd672536edab1f3df27c5617dc008999dff18b17204f064d3ea84b662fc733f41db317ce76605baaafa0ddbc9710fa1d20dbe2bcb1851bb2677c4b1ac18ed15b7be228ffd2344f53f188d24db5629ff00b74a37c09a188b4
+  authorities:
+    key: roles
+  header:
+    string: Authorization

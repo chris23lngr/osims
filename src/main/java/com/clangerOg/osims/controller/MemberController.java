@@ -29,6 +29,7 @@ public class MemberController {
      */
     @GetMapping("/")
     public ResponseEntity<List<Member>> getAllMembers(){
+        System.out.println("Fetching all");
         return ResponseEntity.ok().body(memberService.getAllMembers());
     }
 
